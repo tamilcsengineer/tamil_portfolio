@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f1a;
+  color: #ecf0f1;
+  overflow-x: hidden;
+  position: relative;
+}
+
+canvas#lightning-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(44, 62, 80, 0.95);
+  padding: 1rem;
+  text-align: center;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+header {
+  height: 100vh;
+  background-color: rgba(44, 62, 80, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #3498db;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+section {
+  min-height: 100vh;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2::before {
+  content: "• ";
+  color: #3498db;
+  font-size: 1.5rem;
+}
+
+h2::after {
+  content: " →";
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+  position: relative;
+}
+
+li::before {
+  content: "•";
+  color: #3498db;
+  position: absolute;
+  left: 0;
+}
+
+a {
+  color: #1abc9c;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.corner-img {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.08;
+  width: 150px;
+  height: 150px;
+  background: url('https://cdn-icons-png.flaticon.com/512/2721/2721297.png') no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.flash {
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: background-color 0.1s ease;
+}
